@@ -541,4 +541,34 @@ header p{
 /* Optional: make paragraph spacing cleaner */
 .content-box p{
     margin-bottom:18px;
+}/* ==========================================
+   UNIT 6 - FORCED PINK OVERRIDE (FIXED)
+========================================== */
+
+/* Main title */
+.container h1 {
+    color: #ec4899 !important;
+    border-bottom: 2px solid #ec4899 !important;
+}
+
+/* ALL bold text everywhere (tables included) */
+.container strong,
+.container b,
+td strong,
+th strong {
+    color: #ec4899 !important;
+    font-weight: 800 !important;
+}
+
+/* Table header row override */
+table .header-row {
+    background: linear-gradient(135deg, #ec4899, #db2777) !important;
+    color: #ffffff !important;
+}
+
+/* Sub headers */
+table .sub-header {
+    background-color: #ffe4ec !important;
+    color: #be185d !important;
+    font-weight: 700 !important;
 }
