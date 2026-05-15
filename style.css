@@ -1,0 +1,544 @@
+/* ==========================================
+   GLOBAL STYLES
+========================================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #fff0f6, #ffe4ec, #fff7fb);
+    color:#4a1d33;
+    min-height:100vh;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+header{
+    position: relative;
+    background: linear-gradient(135deg, #ec4899, #db2777);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    border-radius: 0 0 30px 30px;
+    box-shadow:0 8px 25px rgba(219, 39, 119, 0.25);
+    overflow:hidden;
+}
+
+/* Ribbon decorations */
+header::before,
+header::after{
+    content:"🎀";
+    position:absolute;
+    font-size:3rem;
+    opacity:0.25;
+}
+
+header::before{
+    top:10px;
+    left:20px;
+}
+
+header::after{
+    top:10px;
+    right:20px;
+}
+
+header h1{
+    font-size:2.2rem;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+header p{
+    margin-top:8px;
+    font-size:1rem;
+    opacity:0.95;
+}
+
+/* ==========================================
+   MAIN LAYOUT
+========================================== */
+.main-layout{
+    display:flex;
+    min-height:calc(100vh - 120px);
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+.sidebar{
+    width:280px;
+    background: linear-gradient(180deg, #be185d, #831843);
+    color:white;
+    padding:30px 20px;
+    box-shadow:4px 0 20px rgba(131, 24, 67, 0.15);
+    position:sticky;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+}
+
+/* ==========================================
+   PROFILE SECTION
+========================================== */
+.profile{
+    text-align:center;
+    margin-bottom:30px;
+    padding-bottom:25px;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    position:relative;
+}
+
+.profile::before{
+    content:"🎀";
+    position:absolute;
+    top:-10px;
+    right:15px;
+    font-size:2rem;
+    opacity:0.8;
+}
+
+.profile-photo{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid rgba(255,255,255,0.35);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    margin-bottom:15px;
+}
+
+.profile h2{
+    font-size:1.25rem;
+    font-weight:700;
+    color:#ffffff;
+    margin-bottom:6px;
+}
+
+.profile p{
+    font-size:0.9rem;
+    color:#fbcfe8;
+    line-height:1.5;
+}
+
+/* ==========================================
+   MENU TITLE
+========================================== */
+.menu-title{
+    font-size:0.8rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#f9a8d4;
+    margin-bottom:15px;
+    padding-left:8px;
+    font-weight:700;
+}
+
+/* ==========================================
+   SIDEBAR NAVIGATION
+========================================== */
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin-bottom:12px;
+}
+
+.sidebar ul li a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 15px;
+    color:#fde7f3;
+    text-decoration:none;
+    border-radius:12px;
+    transition:all 0.3s ease;
+    font-size:0.95rem;
+    font-weight:500;
+}
+
+.sidebar ul li a:hover{
+    background:rgba(255,255,255,0.12);
+    transform:translateX(5px);
+}
+
+.sidebar ul li a.active{
+    background:linear-gradient(135deg, #ec4899, #f472b6);
+    color:white;
+    box-shadow:0 6px 18px rgba(236, 72, 153, 0.35);
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+.main-content{
+    flex:1;
+    padding:40px;
+}
+
+/* ==========================================
+   HEADER INSIDE MAIN CONTENT
+========================================== */
+.main-content header{
+    background: linear-gradient(135deg, #ec4899, #db2777);
+    color:white;
+    padding:35px 30px;
+    border-radius:24px;
+    margin-bottom:30px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(219, 39, 119, 0.18);
+}
+
+/* ==========================================
+   CONTENT BOX (ABOUT ME)
+========================================== */
+.content-box{
+    position:relative;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(236, 72, 153, 0.08);
+    margin-top:20px;
+    margin-bottom:30px;
+    border:1px solid #fbcfe8;
+}
+
+.content-box::before{
+    content:"🎀";
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:1.8rem;
+    opacity:0.6;
+}
+
+.content-box h2{
+    color:#be185d;
+    margin-bottom:15px;
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+.content-box p{
+    color:#6b2142;
+    line-height:1.8;
+    margin-bottom:12px;
+    text-align:justify;
+}
+
+/* ==========================================
+   DASHBOARD GRID
+========================================== */
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:25px;
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+.card{
+    position:relative;
+    background:white;
+    padding:30px 25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(236, 72, 153, 0.08);
+    text-align:center;
+    transition:all 0.3s ease;
+    border:1px solid #fbcfe8;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"🎀";
+    position:absolute;
+    top:12px;
+    right:15px;
+    font-size:1.6rem;
+    opacity:0.35;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(236, 72, 153, 0.15);
+}
+
+.card h2,
+.card h3{
+    font-size:1.35rem;
+    margin-bottom:12px;
+    color:#be185d;
+    font-weight:700;
+}
+
+.card p{
+    color:#7a3656;
+    line-height:1.6;
+    font-size:0.95rem;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+.card a,
+.back-btn,
+.sub-links a{
+    display:inline-block;
+    margin-top:18px;
+    padding:11px 22px;
+    background:linear-gradient(135deg, #ec4899, #db2777);
+    color:white;
+    text-decoration:none;
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.9rem;
+    transition:all 0.3s ease;
+    box-shadow:0 6px 15px rgba(219, 39, 119, 0.25);
+}
+
+.card a:hover,
+.back-btn:hover,
+.sub-links a:hover{
+    transform:translateY(-2px) scale(1.03);
+    box-shadow:0 10px 22px rgba(219, 39, 119, 0.35);
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+/* ==========================================
+   SUB LINKS
+========================================== */
+.sub-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:20px 0;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+@media (max-width: 768px){
+    .main-layout{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+        padding:20px;
+    }
+
+    .sidebar ul{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .sidebar ul li{
+        margin-bottom:0;
+    }
+
+    .sidebar ul li a{
+        padding:10px 14px;
+        font-size:0.85rem;
+    }
+
+    .main-content{
+        padding:25px;
+    }
+
+    header h1{
+        font-size:1.7rem;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .profile-photo{
+        width:110px;
+        height:110px;
+    } /* Add ONLY this CSS at the end of your existing style.css */
+/* This keeps your current .dashboard section and simply turns it into a sticker gallery */
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
+    gap:25px;
+    justify-items:center;
+    align-items:center;
+    background:white;
+    padding:50px 30px;
+    border-radius:30px;
+    border:1px solid #fbcfe8;
+    box-shadow:0 15px 40px rgba(236, 72, 153, 0.08);
+}
+
+.sticker{
+    width:90px;
+    height:90px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:3rem;
+    background:linear-gradient(135deg, #fff0f6, #ffe4ec);
+    border:2px solid #fbcfe8;
+    border-radius:25px;
+    box-shadow:0 8px 20px rgba(236, 72, 153, 0.12);
+    transition:all 0.3s ease;
+    cursor:default;
+}
+
+.sticker:hover{
+    transform:translateY(-8px) rotate(6deg) scale(1.08);
+    box-shadow:0 18px 30px rgba(236, 72, 153, 0.20);
+}
+
+.sticker:nth-child(odd){
+    transform:rotate(-4deg);
+}
+
+.sticker:nth-child(even){
+    transform:rotate(4deg);
+}
+
+.sticker:nth-child(3n){
+    transform:rotate(-2deg);
+}
+
+.sticker:nth-child(4n){
+    transform:rotate(6deg);
+}
+
+@media (max-width: 768px){
+    .dashboard{
+        grid-template-columns:repeat(3, 1fr);
+        gap:15px;
+        padding:35px 20px;
+    }
+
+    .sticker{
+        width:70px;
+        height:70px;
+        font-size:2.2rem;
+        border-radius:20px;
+    }
+}
+}
+/* ==========================================
+   SUB LINKS - PINK ENVELOPE BUTTONS
+   (ADD THIS AT THE VERY END OF YOUR style.css)
+   Stickers removed, text moved lower so the
+   words "Synthesis" and "Reflection" are fully visible.
+========================================== */
+
+.sub-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:30px;
+    margin:30px 0;
+}
+
+.sub-links a{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:180px;
+    padding:30px;
+    margin-top:0;
+    text-align:center;
+    text-decoration:none;
+    font-size:1.5rem;
+    font-weight:700;
+    color:#9d174d;
+    border-radius:25px;
+    border:3px solid #f9a8d4;
+    background:linear-gradient(135deg, #fff0f6, #ffe4ec);
+    box-shadow:0 15px 35px rgba(236, 72, 153, 0.15);
+    overflow:hidden;
+    transition:all 0.35s ease;
+    text-shadow:0 1px 0 rgba(255,255,255,0.8);
+
+    /* Move text lower so it is not covered by the envelope flap */
+    padding-top:85px;
+}
+
+/* Envelope flap */
+.sub-links a::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:52%;
+    background:linear-gradient(135deg, #fbcfe8, #f9a8d4);
+    clip-path:polygon(0 0, 100% 0, 50% 100%);
+    opacity:0.95;
+}
+
+/* Hover effect */
+.sub-links a:hover{
+    transform:translateY(-8px) rotate(-1deg) scale(1.03);
+    box-shadow:0 25px 45px rgba(236, 72, 153, 0.25);
+    background:linear-gradient(135deg, #fff7fb, #ffe4ec);
+    color:#831843;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+    .sub-links{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .sub-links a{
+        min-height:150px;
+        padding:25px;
+        padding-top:70px;
+        font-size:1.3rem;
+    }
+}/* ==========================================
+   SUB-LINK TEXT COLOR (Synthesis & Reflection)
+   Add this at the VERY END of your style.css
+========================================== */
+
+.sub-links a{
+    color:#ec4899 !important;   /* Bright pink text */
+    font-weight:800;            /* Extra bold */
+    text-shadow:0 2px 6px rgba(236, 72, 153, 0.15);
+}
+
+.sub-links a:hover{
+    color:#be185d !important;   /* Darker pink on hover */
+}/* ==========================================
+   UNIT SUB-HEADINGS (h3) - MAKE PINK
+========================================== */
+
+.content-box h3{
+    color:#ec4899;        /* pink text */
+    font-weight:800;      /* bold */
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+/* Optional: make paragraph spacing cleaner */
+.content-box p{
+    margin-bottom:18px;
+}
